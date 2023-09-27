@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Options</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #a0d8d8; /* Light Blue */
+        padding: 20px;
+      }
+
+      h1 {
+        color: #3d6d81; /* Dark Blue */
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #3d6d81; /* Dark Blue */
+      }
+
+      li.url {
+        border: 2px solid #50a773; /* Green */
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #e0f2e0; /* Light Green */
+      }
+
+      button {
+        background-color: #50a773; /* Green */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #3f8c5e; /* Darker Green */
+      }
+
+      label {
+        font-size: 18px;
+        margin-right: 10px;
+        color: #3d6d81; /* Dark Blue */
+      }
+
+      input[type="number"] {
+        width: 60px;
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .switch-label {
+        display: inline-block;
+        margin-top: 10px;
+        color: #3d6d81; /* Dark Blue */
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: #50a773; /* Green */
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px #50a773; /* Green */
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      /* Style for "Open in new tab" text */
+      #actionText {
+        font-size: 16px;
+        margin-left: 10px;
+        color: #3d6d81; /* Dark Blue */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tracked Sites</h1>
+    <ul id="siteList">
+      <!-- Your list items go here -->
+    </ul>
+    <button id="addSite">Add Site</button>
+    <br>
+    <label for="interval">Check Interval (Seconds): </label>
+    <input type="number" id="interval" min="1">
+    <button id="setInterval">Set Interval</button>
+    <br>
+    <label class="switch-label">Action:</label>
+    <label class="switch">
+      <input type="checkbox" id="actionSwitch">
+      <span class="slider"></span>
+    </label>
+    <span id="actionText">Open in New Tab</span>
+    <script src="options.js" nonce="your-nonce-value"></script>
+  </body>
+</html>
